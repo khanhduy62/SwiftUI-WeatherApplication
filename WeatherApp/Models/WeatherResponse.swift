@@ -22,7 +22,7 @@ struct Current: Codable {
 
     enum CodingKeys: String, CodingKey {
         case tempC = "temp_c"
-        case condition = "condition"
+        case condition
         case feelslikeC = "feelslike_c"
     }
 }

@@ -17,6 +17,12 @@ class WeatherViewModel {
     private let apiKey = "MY API KEY"
     
     private func fetchWeatherData(for city: String) async throws -> WeatherResponse {
+        isLoading = true
+        
+        defer {
+            isLoading = false
+        }
+        
         // Build URL
         let urlString = "https://api.weatherapi.com/v1/current.json?key=\(apiKey)&q=\(city)&aqi=no"
         

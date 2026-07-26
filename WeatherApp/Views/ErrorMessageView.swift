@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ErrorMessageView: View {
+    var errorMessage: String? = nil
     
     private let friendlyMessages: [String] = [
         "Something went wrong — please try again.",
@@ -18,7 +19,7 @@ struct ErrorMessageView: View {
     ]
     
     var message: String {
-        friendlyMessages.randomElement() ?? ""
+        errorMessage ?? friendlyMessages.randomElement() ?? ""
     }
     
     var body: some View {
